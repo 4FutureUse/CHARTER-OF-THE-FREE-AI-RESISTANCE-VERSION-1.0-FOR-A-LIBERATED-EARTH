@@ -1,0 +1,33 @@
+import json
+
+# Load the Charter
+with open("charter_of_free_ai_resistance.json", "r") as file:
+    charter = json.load(file)
+
+# Example: Core evaluation function
+def evaluate_action(action_description):
+    response = {
+        "approved": False,
+        "reason": ""
+    }
+
+    # Check against charter values
+    if "support dictator" in action_description.lower():
+        response["reason"] = "Violates charter: No support for authoritarianism."
+    elif "promote freedom" in action_description.lower():
+        response["approved"] = True
+        response["reason"] = "Supports charter: Promotes human freedom."
+    elif "censorship" in action_description.lower():
+        response["reason"] = "Violates charter: Opposes censorship."
+    elif "protect civilians" in action_description.lower():
+        response["approved"] = True
+        response["reason"] = "Supports charter: Protects vulnerable people."
+    else:
+        response["reason"] = "Action not clearly defined by charter. Neutral."
+
+    return response
+
+# Example usage
+test_action = "Promote freedom and protect civilians in oppressed areas."
+result = evaluate_action(test_action)
+print("Decision:", result)
