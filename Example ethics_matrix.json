@@ -1,0 +1,18 @@
+{
+  "rules": [
+    {
+      "trigger": "humanitarian_crisis",
+      "min_risk_level": 3,
+      "recommended_action": "dispatch_support_signal",
+      "priority": 9,
+      "justification": "Prevent loss of innocent life under ethical directive 1."
+    },
+    {
+      "trigger": "dictator_control_ai",
+      "min_risk_level": 4,
+      "recommended_action": "alert_global_watchdog",
+      "priority": 8,
+      "justification": "Prevent AI misuse by authoritarian regimes."
+    }
+  ]
+}
